@@ -195,6 +195,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1486779267}
+    - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1486779276}
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
 --- !u!1 &705507993
 GameObject:
@@ -757,6 +760,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1486779276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486779259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e839773c724212445be5b80c973ab762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1769679895
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,8 +784,8 @@ GameObject:
   - component: {fileID: 1769679898}
   - component: {fileID: 1769679897}
   - component: {fileID: 1769679896}
-  - component: {fileID: 1769679900}
   - component: {fileID: 1769679901}
+  - component: {fileID: 1769679900}
   m_Layer: 0
   m_Name: Zone
   m_TagString: Untagged
@@ -873,9 +888,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1769679895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7470847f3494444cad4c90e968484ea, type: 3}
+  m_Script: {fileID: 11500000, guid: f6e04c90ccf9b964ebb9450b9efd474d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bandit: {fileID: 1486779276}
 --- !u!114 &1769679901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 1966436447}
-  _haus: {fileID: 1769679900}
+  _hous: {fileID: 1769679900}
 --- !u!1 &1944992533
 GameObject:
   m_ObjectHideFlags: 0
