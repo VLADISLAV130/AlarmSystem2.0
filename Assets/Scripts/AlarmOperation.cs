@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class SystemSignalling : MonoBehaviour
+public class AlarmOperation : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private Hous _hous;
@@ -10,6 +10,7 @@ public class SystemSignalling : MonoBehaviour
     private float _minVolume = 0;
     private float _maxVolume = 1;
     private float _delay = 0.5f;
+    private bool _play = false;
     private Coroutine _coroutine;
 
     private void OnEnable()
@@ -32,18 +33,29 @@ public class SystemSignalling : MonoBehaviour
 
     private void StartSound()
     {
-        if (_coroutine != null)
-            StopCoroutine(_coroutine);
-
-        _coroutine = StartCoroutine(VolumeChange(_delay, _audioSource.volume, _maxVolume, _speedChange));
+        _play = true;
+        SelectionVolume();
     }
 
     private void StopSound()
     {
+        _play = false;
+        SelectionVolume();              
+    }
+
+    private void SelectionVolume()
+    {
+        float finalVolume;
+
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
-        _coroutine = StartCoroutine(VolumeChange(_delay, _audioSource.volume, _minVolume, _speedChange));       
+        if(_play)
+            finalVolume = _maxVolume;        
+        else
+            finalVolume = _minVolume;
+
+        _coroutine = StartCoroutine(VolumeChange(_delay, _audioSource.volume, finalVolume, _speedChange));
     }
 
     private IEnumerator VolumeChange(float delay, float currentVolume, float targetVolume, float speedChange)
